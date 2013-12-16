@@ -1,0 +1,16 @@
+/*
+Theme Name: Cycling Reviews
+Theme URI: http://enva.to/IW4wFi
+Author: Carl Bean Larson and Kia Lam
+Author URI: http://enva.to/IW4wFi
+Description: Cycling Reviews is a WordPress theme based on the Skeleton framework, custom designed for Dennis Bean Larson of fixedgeargallery.com
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: adaptive, skeleton
+Text Domain: cycling reviews
+*/
+
+@import url("stylesheets/skeleton.css");
+@import url("stylesheets/base.css");
+@import url("stylesheets/layout.css");

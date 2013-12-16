@@ -1,0 +1,711 @@
+/*
+* Cycling-Reviews V1.0
+* Copyright 2013, Kia Lam
+* www.cycling-reviews.com
+* Please do not re-use without written consent:
+* e. digitalanime@gmail.com
+* c. 703.314.7337
+* 1/16/2013
+*/
+
+/* Table of Content
+==================================================
+	#baseline corrections
+	#Site Styles
+	#Page Styles
+	#Media Queries
+	#Font-Face
+	#JQuery Styles
+
+/* #Typography (baseline corrections)
+================================================== */
+
+	h1 { line-height: 49px; margin-bottom: 14px;}
+	h2 { line-height: 42px; margin-bottom: 7px; }
+	h3 { line-height: 35px; margin-bottom: 7px; }
+	h4 { line-height: 28px; margin-bottom: 7px; }
+	
+	h4 a,
+	h4 a:visted {
+		color: red;
+	}
+	h5 { line-height: 21px; margin-bottom: 7px;}
+
+	p { margin: 0 0 21px 0; }
+	p.lead { line-height: 28px; }
+
+
+/* #Site Styles
+================================================== */
+
+/* apply a natural box layout model to all elements */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/* general styles */
+
+
+html, body {
+    height: 100%
+}
+
+body {
+	background-color: #b2b3b6;
+}
+
+.container {
+	background-color: white;
+}
+
+h1 a {
+text-decoration: none;
+}
+
+.review.item a {
+	font-family: Helvetica Neue Bold, sans-serif;
+	color: red;
+	font-weight: bolder;
+}
+
+.read.more {
+	font-size: 11px;
+	font-weight: bolder;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: red;
+}
+
+a:hover.read.more {
+	color: black;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+	margin: 0;
+}
+
+/* navigation styling */
+
+nav.container.primary {
+height: 50px;
+}
+
+nav.primary ul,
+nav.primary ul li {
+	margin: 0px;
+	 
+}
+
+nav.primary ul li {
+
+	float: left;
+	position: relative;
+	display: inline;
+}
+
+nav.primary ul li a {
+	
+	display: inline-block;
+	padding: 0 16px;
+	line-height: 49px;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 0.3em;
+}
+
+nav.primary ul li a:hover {
+	cursor: pointer;
+}
+
+/* sub menu **/
+nav.primary ul ul {
+	opacity: 0;
+  	filter: alpha(opacity=0); 
+	background: rgba(255,255,255,0.9);
+	
+   	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 999;
+	height: 0px;
+	overflow: hidden;
+	
+	width: auto;
+	-webkit-transition: opacity 0.4s ease-out;
+	-moz-transition: opacity 0.4s ease-out;
+	-o-transition: opacity 0.4s ease-out;
+	-ms-transition: opacity 0.4s ease-out;
+	transition: opacity 0.4s ease-out;
+
+		
+	-webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);	
+}
+
+
+
+nav.primary ul li:hover ul {
+	opacity: 10; 
+  	filter: alpha(opacity=100); 
+	height: auto;
+	overflow: auto;
+}
+
+nav.primary ul ul li:first-child {
+	padding-top: 7px;
+}
+
+nav.primary ul ul li:last-child {
+	padding-bottom: 7px;
+}
+
+
+nav.primary ul ul li {
+
+	float: none;
+	display: list-item;
+}
+
+
+nav.primary ul ul li a {
+	display: block;
+	line-height: 21px;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+
+nav.primary ul li:hover > a {
+	background: #cccccc;
+}
+
+
+/* searchbar styling */
+nav.primary.primary .searchbar {
+	padding-top: 10px;
+	margin-bottom: 0px;
+	float: right;
+}
+
+input[type="text"], input[type="password"], input[type="email"], textarea, select {
+	margin-bottom: 0px;
+	border: none;
+	background-color: #cccccc;
+	color: #939598;
+	padding-left: 10px;
+}
+
+.nav.searchbar {
+	margin-right: 16px;
+}
+
+/* header styling */
+/*header.primary.container {
+	height: 210px;
+}*/
+
+
+/*header.primary h1 {
+	text-align: center;
+	font-size: 63px;
+	padding-top: 73.5px;
+	
+}*/
+
+header h1.logo a {
+	width: 580px;
+	height: 129px;
+	display: block;
+	background: url(../images/sprite.png) no-repeat 0 0;
+	margin-left: 225px;
+	margin-top: 17px;
+	
+	font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
+}
+
+.style1 {
+	color: #ff0000;
+}
+
+
+
+
+/* =WordPress Core
+-------------------------------------------------------------- */
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+}
+
+
+
+
+.featured.primary img {
+	width: 940px;
+}
+
+.featured.primary h1 {
+	text-indent: 100%;
+	height: 0px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+/*main content styling */
+
+header.primary.container {
+	height: 210px;
+}
+
+.main.heading {
+	-webkit-box-shadow: 0px 4px 8px #808080;
+	-moz-box-shadow:    0px 4px 8px #808080;
+	box-shadow:         0px 4px 8px #808080;
+	z-index: 2;
+}
+
+.primary.content {
+/* places box shadow on bottom edge only */
+	-webkit-box-shadow: 0px 4px 5px -2px #808080;
+	-moz-box-shadow: 0px 4px 5px -2px #808080;
+	box-shadow: 0px 4px 5px -2px #808080;
+}
+
+div.ten.columns {
+	padding-left: 16px;
+	padding-bottom: 165px;
+}
+	
+
+article a {
+	text-decoration: none;
+}
+
+article h4 {
+	font-size: 18px;
+	margin-top: 42px;
+	letter-spacing: 0.08em;
+}
+
+article h4 ul li a,
+article h4 ul li a:visited {
+	color: red;
+}
+
+article img {
+	height: 350px;
+	width: 580px;
+}
+
+
+article h5 a.date {
+	float: right;
+	color: #808080
+}
+
+
+article h5 a.author {
+	color: #808080;
+	
+}
+
+article img {
+	width: 579px;
+	height: auto;
+}
+
+article p {
+	margin-top: 21px;
+}
+
+
+/* aside styling */
+
+div.ads.six.columns {
+	margin-bottom: 14px;
+}
+
+aside h4 {
+	text-indent: 100%;
+	height: 0px;
+	padding-top: 30px;
+	white-space: nowrap;
+	overflow: hidden;
+	float: right;
+
+}
+
+.placeholder img a {
+	padding-top: 45px;
+}
+
+aside img {
+	width: 300px;
+	/*height: 120px;*/
+	padding-top: 14px;
+	padding-bottom: 14px;
+	margin-right: 16px;
+	float: right;
+}
+
+/* images styling */
+a.social img {
+	width: 25px;
+	height: 25px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+/* Pagination Styling */
+.pagination ul {
+	width: 100%;
+	text-align: center;
+	margin: 21px 0 35px 0;
+}
+
+.pagination li {
+	display: inline;
+}
+
+.pagination li a,
+.pagination li span {
+	display: inline-block;
+	line-height: 35px;
+	width: 35px;
+	height: 35px;
+	text-align: center;
+	padding: 0 14px;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+nav.pagination li span.current,
+nav.pagination li a:hover {
+	border: 2px solid red;
+	color: red;
+}
+
+
+/* footer styling */
+
+footer.container{
+	background-color: #CCCCCC;
+	-webkit-box-shadow: 0px 3px 6px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    0px 3px 6px rgba(50, 50, 50, 0.75);
+	box-shadow:         0px 3px 6px rgba(50, 50, 50, 0.75);
+}
+
+div.last.twelve.columns {
+	padding: 18px 0 0 16px;
+}
+
+footer ul li {
+	float: left;
+	display: inline;
+	width: auto;
+	text-transform: uppercase;
+	letter-spacing: 0.07em;
+}
+
+
+footer ul li a {
+	text-decoration: none;
+	margin-right: 28px;
+}
+
+footer ul ul li {
+	float: none;
+	display: block;
+	margin-left: 0px;
+	text-transform: uppercase;
+}
+
+
+footer ul ul li a,
+footer ul ul li a:visited {
+	color: #808080;
+}
+
+footer ul ul li a:hover {
+	color: #000;
+}
+
+footer ul ul li:first-child {
+	padding-top: 20px;
+}
+
+a.year,
+a.year:visited {
+	color: #000000;
+}
+
+
+footer .searchbar {
+	padding-top: 20px;
+	padding-right: 16px;
+	margin-bottom: 0px;
+	float: right;
+}
+
+footer input[type="text"], input[type="password"], input[type="email"], textarea, select {
+	background-color: #ffffff;
+}
+
+/* credits styling */
+div.bottom {
+	font-size: 12px;	
+	padding-top: 210px;
+	/*background-color: #e7e7e8;*/
+}
+	
+	
+div.bottom p,
+div.bottom a,
+div.bottom a:visited {
+	font-family: 'Ramsey-Light', sans-serif;
+	text-decoration: none;
+	color: #a7a7a7;
+}
+
+div.bottom a:hover {
+	color: #000000;
+}
+
+div.last-credit,
+div.first-credit {
+	text-align: justify
+}
+/* #Page Styles
+================================================== */
+
+/* #Media Queries
+================================================== */
+
+	/* Smaller than standard 960 (devices and browsers) */
+	@media only screen and (max-width: 959px) {}
+
+	/* Tablet Portrait size to standard 960 (devices and browsers) */
+	@media only screen and (min-width: 768px) and (max-width: 959px) {}
+
+	/* All Mobile Sizes (devices and browser) */
+	@media only screen and (max-width: 767px) {}
+
+	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+	@media only screen and (min-width: 480px) and (max-width: 767px) {}
+
+	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+	@media only screen and (max-width: 479px) {}
+
+
+/* #Font-Face
+================================================== */
+/* 	This is the proper syntax for an @font-face file
+		Just create a "fonts" folder at the root,
+		copy your FontName into code below and remove
+		comment brackets */
+
+/*	@font-face {
+	    font-family: 'FontName';
+	    src: url('../fonts/FontName.eot');
+	    src: url('../fonts/FontName.eot?iefix') format('eot'),
+	         url('../fonts/FontName.woff') format('woff'),
+	         url('../fonts/FontName.ttf') format('truetype'),
+	         url('../fonts/FontName.svg#webfontZam02nTh') format('svg');
+	    font-weight: normal;
+	    font-style: normal; }
+*/
+
+
+/* Ramsey webfont Styling */
+
+@import url("//hello.myfonts.net/count/257dcd");
+
+  
+@font-face {font-family: 'Ramsey-Light';src: url('../webfonts/257DCD_0_0.eot');src: url('../webfonts/257DCD_0_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/257DCD_0_0.woff') format('woff'),url('../webfonts/257DCD_0_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'Ramsey-Bold';src: url('../webfonts/257DCD_1_0.eot');src: url('../webfonts/257DCD_1_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/257DCD_1_0.woff') format('woff'),url('../webfonts/257DCD_1_0.ttf') format('truetype');}
+ 
+@font-face {
+	font-family: 'Helvetica Neue Roman';
+	src: url('../fonts/HelveticaNeueLTStd-Roman.otf');
+}
+h1,
+h2 {
+	font-family: 'Ramsey-Bold', Helvetica, sans-serif;
+	}
+	
+h4 {
+	font-family: 'Ramsey-Light', Helvetica, sans-serif;
+	color: red;
+	text-transform: uppercase;
+	}
+	
+nav.primary.primary ul li {
+font-family: 'Ramsey-Light', Helvetica, sans-serif;
+font-size: 12px;
+line-height: 12px;	
+}
+
+nav.primary.primary input[type="text"] {
+	font-family: 'Ramsey-Light', Helvetica, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 0.3em;
+
+}
+
+.featured.container h3 {
+	font-family: 'Ramsey-Light', Helvetica, sans-serif;
+	color: white;
+	text-transform: uppercase;
+}
+
+.featured.container p {
+	font-family: 'Ramsey-Bold', Helvetica, sans-serif;
+	color: white;
+	text-transform: uppercase;
+}
+
+article h5 {
+	font-family:'Ramsey-Light', Helvetica, sans-serif;
+	color: #808080;
+	padding-bottom: 7px;
+	font-size: 14px;
+}
+
+.pagination li {
+font-family: 'Ramsey-Light', 'Helvetica Neue Roman', sans-serif;
+	font-size: 14px;
+	line-height: 14px;
+	letter-spacing: 0.3em;
+}
+
+
+footer ul li {
+	font-family: 'Ramsey-Light', 'Helvetica Neue Roman', sans-serif;
+	font-size: 12px;
+	line-height: 12px;
+	letter-spacing: 0.3em;
+}
+
+footer input[type="text"] {
+	font-family: 'Ramsey-Light', Helvetica, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 0.3em;
+
+}
+
+p {
+	font-family: 'Helvetica Neue Roman', sans-serif;
+}
+
+
+/*JQuery Styles*/
+/*
+ * jQuery FlexSlider v2.0
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the GPLv2 license.
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Contributing author: Tyler Smith (@mbmufffin)
+ */
+
+ 
+/* Browser Resets */
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus  {outline: none;}
+.slides,
+.flex-control-nav,
+.flex-direction-nav {margin: 0; padding: 0; list-style: none;} 
+
+/* FlexSlider Necessary Styles
+*********************************/ 
+.flexslider {margin: 0; padding: 0; position: relative;}
+.flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider .slides img {width: 100%; display: block;}
+.flex-pauseplay span {text-transform: capitalize;}
+
+/*custom flexslider styling*/
+
+

@@ -1,0 +1,114 @@
+<div class="twelve columns">
+				<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Archives</a>
+							<ul class="sub">
+								<li><a href="#">2013</a></li>
+								<li><a href="#">January</a></li><br>
+								<li><a href="#">2012</a></li>
+								<li><a href="#">December</a></li>
+								<li><a href="#">November</a></li>
+								<li><a href="#">October</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Categories</a>
+							<ul class="sub">
+								<li><a href="#">Mountain</a></li>
+								<li><a href="#">Road</a></li>
+								<li><a href="#">Fixed/Track</a></li>
+								<li><a href="#">Cross</a></li><br>
+								<li><a href="#">Complete Bikes</a></li>
+								<li><a href="#">Frames</a></li>
+								<li><a href="#">Components</a></li>
+								<li><a href="#">Accessories</a></li>
+								<li><a href="#">Bags</a></li>
+								<li><a href="#">Clothing</a></li>
+								<li><a href="#">Misc</a></li>
+							</ul>
+						</li>
+						<li><a href="index.html">Connect</a>
+							<ul class="sub">
+								<li><a href="#">Advertise</a></li>
+								<li><a href="#">Email</a></li>
+								<li><a href="#">Twitter</a></li>
+								<li><a href="#">Facebook</a></li>
+								<li><a href="#">Fixed Gear Gallery</a></li>
+								<li><a href="#">Erg Bar</a></li>
+							</ul>
+						</li>
+					</ul>	
+	
+		
+			</div>		
+
+
+
+			<img class="first" src="http://placehold.it/300x200" alt="ad placeholder">
+			<img src="/wordpress/wp-content/themes/cyling-reviews/images/ad1.png" alt="review add">
+			<img src="/wordpress/wp-content/themes/cyling-reviews/images/banner-bens.jpg" alt="ben's cycle">
+			<img src="/wordpress/wp-content/themes/cyling-reviews/images/banner-missionworkshop.jpg" alt="mission workshop">
+			<img src="/wordpress/wp-content/themes/cyling-reviews/images/banner-powder.gif" alt="powdercoat studio">
+			<img src="/wordpress/wp-content/themes/cyling-reviews/images/banner-toro.jpg" alt="toro">
+			<img src="/wordpress/wp-content/themes/cyling-reviews/images/banner-erg.jpg" alt="erg bars">
+			<img src="/wordpress/wp-content/themes/cyling-reviews/images/ad2.png" alt="cycling reviews">
+			<img src="/wordpress/wp-content/themes/cyling-reviews/images/banner-bagaboo.jpg" alt="bagaboo">
+			<img src="/wordpress/wp-content/themes/cyling-reviews/images/banner-american.png" alt="american">
+			<img src="/wordpress/wp-content/themes/cyling-reviews/images/banner-bens.jpg" alt="ben's cycle">
+			<img src="/wordpress/wp-content/themes/cyling-reviews/images/banner-missionworkshop.jpg" alt="mission workshop">
+			<img src="/wordpress/wp-content/themes/cyling-reviews/images/banner-powder.gif" alt="powdercoat studio">
+			<img src="/wordpress/wp-content/themes/cyling-reviews/images/banner-toro.jpg" alt="toro">
+			<img src="/wordpress/wp-content/themes/cyling-reviews/images/banner-erg.jpg" alt="erg bars">
+			<img src="/wordpress/wp-content/themes/cyling-reviews/images/banner-bagaboo.jpg" alt="bagaboo">
+			<img src="/wordpress/wp-content/themes/cyling-reviews/images/banner-american.png" alt="american">
+		</div>
+		
+		<div class="flexslider">
+				<ul class="slides">
+							
+								<li>
+									<figure>
+										<img src="<?php echo get_template_directory_uri(); ?>/images/wabi01.jpg" alt="wabi 1" />
+									</figure>
+								</li>
+							
+								<li>
+									<figure>
+										<img src="<?php echo get_template_directory_uri(); ?>/images/wabi02.jpg" alt="wabi 2" /> 									
+									</figure>
+								</li>
+							
+								<li>
+									<figure>
+										<img src="<?php echo get_template_directory_uri(); ?>/images/wabi03.jpg" alt="wabi 3" />									
+									</figure>
+								</li>
+							
+							</ul><!--end slides-->
+				</div><!-- end flexslider-->
+				
+				
+				
+						<?php efs_slider(); ?>
+<nav class="pagination">
+							<?php
+							global $wp_query;  
+	  
+							$total_pages = $wp_query->max_num_pages;  
+							  
+							if ($total_pages > 1){  
+							  
+							  $current_page = max(1, get_query_var('paged'));  
+							    
+							  echo paginate_links(array(  
+							      'base' => get_pagenum_link(1) . '%_%',  
+							      'format' => 'page/%#%',  
+							      'current' => $current_page,  
+							      'total' => $total_pages, 
+							      'prev_next'    => False,
+							      'type' => 'list', 
+							    ));  
+							}  
+							?>
+						
+	</nav><!--end pagination-->			
